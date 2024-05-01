@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/admin.css" rel="stylesheet">
+    <link href="/static/css/general.css" rel="stylesheet">
+    <link href="/static/css/footer.css" rel="stylesheet">
+    <link href="/static/css/adminHeader.css" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Админ</title>
+</head>
+
+<body>
+<header th:replace="~{adminHeader :: header}"></header>
+
+<main>
+    <div id="myContacts" class="contactsMenu" th:each="user : ${users}">
+        <div class="userHeader">
+            <a th:href="@{'admin/' + ${user.getId()}}"><p>Данные пользователя</p></a>
+        </div>
+
+        <div class="textInput">
+            <p th:text="${'Имя: ' + user.getName()}"></p>
+            <p th:text="${'Фамилия: ' + user.getSirName()}"></p>
+            <p th:text="${'Телефон: ' + user.getPhoneNumber()}"></p>
+            <p th:text="${'Почта: ' + user.getUsername()}"></p>
+        </div>
+    </div>
+</main>
+
+<form action="/logout" method="GET" id="formLogOut">
+    <button class="shineButton" type="submit">Выйти</button>
+</form>
+
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>

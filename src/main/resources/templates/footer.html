@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<body>
+<footer th:fragment="footer">
+    <script src="/static/js/number-of-items.js"></script>
+
+    <div class="shell">
+		<span class="about">
+			<h3 class="title">О Нашем Магазине</h3>
+
+			<p>
+				Добро пожаловать в наш удивительный мир цветов, где каждый бутон — это история любви, радости и восхищения!
+				В нашем онлайн-магазине цветов вы найдете вдохновляющий ассортимент свежих и красочных букетов, созданных с любовью и профессионализмом наших флористов.
+				Доверьтесь нам, и каждый цветок станет частью вашей истории!
+			</p>
+
+			<div id="social_media">
+				<div class="soc_button youtube">
+					<a
+						class="fa fa-youtube-play"
+						href="https://www.youtube.com"
+						target="_blank"
+                    ></a>
+				</div>
+
+				<div class="soc_button telegram">
+					<a
+						class="fa fa-telegram"
+						href="https://telegram.org"
+						target="_blank"
+                    ></a>
+				</div>
+
+				<div class="soc_button vk">
+					<a class="fa fa-vk" href="https://vk.com" target="_blank"></a>
+				</div>
+			</div>
+		</span>
+
+        <span class="links">
+			<h3 class="title">Ссылки</h3>
+
+			<ul>
+				<li><a href="/catalog">Каталог</a></li>
+				<li><a href="/account">Аккаунт</a></li>
+			</ul>
+		</span>
+
+        <span class="contacts">
+			<h3 class="title">Контакты</h3>
+
+			<address>
+				<div class="icon-block">
+					<i class="fa fa-map-marker ico-contact"></i>
+
+					<p>128000, г. Москва, пр-кт Вернадского, дом 78, Кабинет А-108</p>
+				</div>
+
+				<div class="icon-block">
+					<i class="fa fa-envelope ico-contact"></i>
+
+					<a id="email" href="mailto:example@mail.ru">goshik04@gmail.ru</a>
+				</div>
+
+				<div class="icon-block">
+					<i class="fa fa-phone ico-contact"></i>
+
+					<div class="tel-numbers">
+						<a href="tel:8 (800) 555-35-35">8 (958) 832-29-74</a>
+						<a href="tel:+7 (900) 012-34-56">+7 (958) 832-29-74</a>
+					</div>
+				</div>
+			</address>
+		</span>
+    </div>
+
+    <span id="rights"><i>© Собственность студента, 2024 год</i></span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 120px;
+    margin-right: 50px;
+}
+
+.cart {
+    position: relative;
+    left: 50px;
+    width: 1000px;
+}
+
+.contactsMenu {
+    border-radius: 20px;
+    backdrop-filter: opacity(80%);
+    width: 25%;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 10px 15px;
+    background: lightgreen;
+    margin: 0 0 20px 20px;
+
+    > h2 {
+        margin: 0 0 5px 10px;
+        color: green;
+        font-size: 20px;
+    }
+
+    input {
+        width: 50px;
+        border: none;
+        background-color: transparent;
+        color: inherit;
+        outline: none;
+        font-size: 20px;
+    }
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+
+    > p {
+        color: green;
+        font-size: 18px;
+    }
+}
+
+#text2 {
+    font-style: italic;
+    color: green;
+    font-size: 18px;
+}
+
+.removeAndPrice {
+    display: flex;
+    align-items: center;
+
+    > p {
+        color: green;
+    }
+}
+
+.paymentChoose {
+    display: flex;
+    flex-direction: column;
+
+    > label {
+        margin: 10px;
+        font-size: 18px;
+        color: green;
+    }
+}
+
+.topBar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: solid 2px rgb(128, 128, 128);
+}
+
+.topBar div {
+    border-left: solid 2px rgb(128, 128, 128);
+    border-top: solid 2px rgb(128, 128, 128);
+    padding: 10px;
+}
+
+.topBar div:last-child {
+    border-right: solid 2px rgb(128, 128, 128);
+}
+
+.topBar p {
+    font-size: 20px;
+    margin: 0;
+    color: green;
+}
+
+.topBar div:first-child {
+    border-radius: 20px 0 0 0;
+}
+
+.topBar div:last-child {
+    border-radius: 0 20px 0 0;
+}
+
+.oneGood {
+    margin: 20px 0 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 20px;
+    border-bottom: solid 2px rgb(128, 128, 128);
+
+    > p {
+        color: green;
+    }
+}
+
+.card {
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 550;
+    text-decoration: none;
+    justify-items: center;
+    align-items: center;
+
+    > p {
+        color: green;
+    }
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.remove-btn {
+    background: lightgreen;
+    margin-left: 10px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.shineButton {
+    text-align: center;
+    background: white;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid lightgreen;
+    border-radius: 8px;
+    font-size: 25px;
+    color: green;
+    width: 60%;
+    cursor: pointer;
+
+    &:hover {
+        background: green;
+        color: #fff;
+    }
+}

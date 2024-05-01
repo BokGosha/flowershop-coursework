@@ -1,0 +1,85 @@
+main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-height: 48vh;
+
+    > p {
+        color: black;
+        text-shadow: none;
+    }
+}
+
+.cart {
+    position: relative;
+    left: 50px;
+    width: 1000px;
+}
+
+.contactsMenu {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    width: 25%;
+    max-height: 230px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: lightgreen;
+}
+
+.userHeader {
+    display: flex;
+    align-items: center;
+
+    * {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+
+        > p {
+            margin: 5px;
+            color: green;
+        }
+    }
+}
+
+.shineButton {
+    text-align: center;
+    background: white;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: hidden;
+    border: 2px solid lightgreen;
+    border-radius: 8px;
+    font-size: 25px;
+    color: green;
+    width: 70%;
+    cursor: pointer;
+
+    &:hover {
+        background: lightgreen;
+        color: #fff;
+    }
+}
+
+.textInput {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    > p {
+        margin: 5px;
+        font-size: 22px;
+        color: green;
+    }
+}
+
+#formLogOut {
+    width: 150px;
+    top: 0;
+    right: 50px;
+    position: fixed;
+}

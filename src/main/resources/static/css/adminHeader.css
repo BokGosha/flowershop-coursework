@@ -1,0 +1,26 @@
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+
+    > nav {
+        font-size: 25px;
+        position: fixed;
+        width: 100%;
+        background: rgb(220, 220, 220);
+        text-align: center;
+
+        > a {
+            color: #1d5d04;
+            text-decoration: none;
+
+            &:active {
+                color: #fff;
+            }
+
+            p:hover {
+                transform: scale(1.06);
+            }
+        }
+    }
+}

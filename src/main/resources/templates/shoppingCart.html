@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="/static/css/shopping-cart.css" rel="stylesheet">
+    <link href="/static/css/general.css" rel="stylesheet">
+    <link href="/static/css/header.css" rel="stylesheet">
+    <link href="/static/css/footer.css" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Корзина</title>
+</head>
+
+<body>
+<header th:replace="~{header :: header(shoppingCart)}"></header>
+
+<form id="myForm" th:action="@{/shoppingCartPost}" th:object="${numberOfItems}" th:method="POST" style="display: none;">
+    <input id="inputItems" style="display: none;" readonly th:field="*{number}">
+</form>
+
+<main>
+    <section class="cart">
+        <div class="topBar">
+            <div><p>Товар</p></div>
+            <div><p>Количество</p></div>
+            <div><p>Цена за один товар</p></div>
+            <div><p>Общая стоимость</p></div>
+        </div>
+
+        <div class="cartGoods">
+            <div id="cart-items"></div>
+        </div>
+    </section>
+
+    <form id="myContacts" class="contactsMenu" th:action="@{/add-order}" th:method="POST" th:object="${order}">
+        <h2>Общая стоимость</h2>
+
+        <div class="cost">
+            <input id="text2" th:field="*{totalCost}" readonly>
+            <p>₽</p>
+        </div>
+
+        <h2>Способ оплаты</h2>
+
+        <div class="paymentChoose">
+            <label><input required type="radio" name="payment" th:field="*{paymentChoose}" th:value="карта">Оплата по
+                карте</label>
+            <label><input required type="radio" name="payment" th:field="*{paymentChoose}" th:value="наличные">Оплата
+                наличными</label>
+        </div>
+
+        <div th:each="flower, i: *{orderItems}" class>
+            <input th:id="${'index' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].flower.id}"
+                   style="display: none;">
+            <input th:id="${'name' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].flower.name}"
+                   style="display:none;">
+            <input th:id="${'amount' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].amount}"
+                   style="display: none;">
+            <input th:id="${'flowerPrice' + __${i.index}__}" th:field="*{orderItems[__${i.index}__].flower.flowerPrice}"
+                   style="display: none;">
+        </div>
+
+        <button type="submit" class="shineButton" onclick="removeAll()">Оформить</button>
+    </form>
+</main>
+
+<script src="/static/js/order-gods.js"></script>
+
+<script>
+    window.onload = function () {
+        getNumberOfItems();
+        fillCartItems();
+    };
+</script>
+
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>

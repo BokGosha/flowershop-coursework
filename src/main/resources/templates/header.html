@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<body>
+<header th:fragment="header(currentPage)">
+    <h1>Цветочный магазин</h1>
+
+    <input type="checkbox" id="burger-checkbox">
+    <label for="burger-checkbox" class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="burger-menu">
+        <ul class="menu">
+            <li>
+                <a href="/catalog">
+                    <div id="first" th:classappend="${currentPage == 'catalog' ? 'currentPage' : ''}">
+                        <p>
+                            Каталог
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="submitForm()" id="cartLink">
+                    <div id="last" th:classappend="${currentPage == 'shoppingCart' ? 'currentPage' : ''}">
+                        <p>
+                            Корзина
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/account">
+                    <div th:classappend="${currentPage == 'account' ? 'currentPage' : ''}">
+                        <p>
+                            Аккаунт
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>
