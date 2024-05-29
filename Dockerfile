@@ -8,7 +8,7 @@ RUN chmod +x gradlew
 
 RUN ./gradlew clean build -x test
 
-FROM openjdk-21
+FROM openjdk:21
 
 WORKDIR /app
 
