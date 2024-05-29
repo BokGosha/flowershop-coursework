@@ -24,7 +24,7 @@ public class UserController {
 
     @PostMapping("reg")
     public String addNewUser(@ModelAttribute("userReg") User user) {
-        userServiceImpl.addUser(user);
+        userServiceImpl.createUser(user);
 
         return "redirect:login";
     }

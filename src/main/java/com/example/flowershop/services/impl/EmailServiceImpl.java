@@ -19,11 +19,11 @@ public class EmailServiceImpl implements EmailService {
 
     @Async
     @Override
-    public void sendEmail(String text) {
+    public void sendEmail(String to, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom(username);
-        message.setTo("goshik04r@gmail.com");
+        message.setTo(to);
         message.setSubject("Заказ");
         message.setText(text);
 

@@ -1,5 +1,5 @@
 package com.example.flowershop.services;
 
 public interface EmailService {
-    void sendEmail(String text);
+    void sendEmail(String to, String text);
 }

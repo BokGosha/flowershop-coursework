@@ -17,7 +17,7 @@ public class AdminController {
     private final UserService userServiceImpl;
     private final OrderService orderService;
 
-    @GetMapping("")
+    @GetMapping
     public String getAllUsers(Model model) {
         model.addAttribute("users", userServiceImpl.getAllUsers());
 

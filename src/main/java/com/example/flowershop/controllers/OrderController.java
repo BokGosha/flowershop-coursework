@@ -76,7 +76,7 @@ public class OrderController {
             message.append(orderItem.getFlower().getName());
         }
 
-        emailService.sendEmail(message.toString());
+        emailService.sendEmail(customUserDetails.getUser().getUsername(), message.toString());
 
         orderService.saveOrder(order);
 
