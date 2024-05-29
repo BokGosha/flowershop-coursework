@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY . /app/.
 
-RUN chmod +x gradlew
+RUN chmod +x gradle
 
-RUN ./gradlew clean build -x test
+RUN gradle clean build -x test
 
 FROM openjdk:21
 
